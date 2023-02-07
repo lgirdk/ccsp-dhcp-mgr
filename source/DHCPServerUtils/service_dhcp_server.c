@@ -230,11 +230,11 @@ void getRFC_Value(const char* dnsOption)
         result = strcmp (status,l_DnsStrictOrderStatus);
         if (result == 0){
             strncpy((char *)dnsOption,dnsSet, strlen(dnsSet));
-            fprintf(stdout, "DNSMASQ getRFC_Value %s %s %d\n",status,l_DnsStrictOrderStatus,sizeof(l_DnsStrictOrderStatus));
+            fprintf(stdout, "DNSMASQ getRFC_Value %s %s %zu\n",status,l_DnsStrictOrderStatus,sizeof(l_DnsStrictOrderStatus));
             DHCPMGR_LOG_INFO("Starting dnsmasq with additional dns strict order option: %s",l_DnsStrictOrderStatus);
         }
         else{
-            fprintf(stdout, "FAILURE: DNSMASQ getRFC_Value syscfg_get %s %s %d\n",status,l_DnsStrictOrderStatus,sizeof(l_DnsStrictOrderStatus));
+            fprintf(stdout, "FAILURE: DNSMASQ getRFC_Value syscfg_get %s %s %zu\n",status,l_DnsStrictOrderStatus,sizeof(l_DnsStrictOrderStatus));
             DHCPMGR_LOG_INFO("RFC DNSTRICT ORDER is not defined or Enabled %s", l_DnsStrictOrderStatus);
         }
 }

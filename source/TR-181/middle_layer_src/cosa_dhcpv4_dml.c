@@ -3862,7 +3862,7 @@ Server_SetParamStringValue
             }
             if (NULL != pStaticClients)
             {
-                CcspTraceWarning(("pStaticClients->entries_count is %u\n", pStaticClients->entries_count));
+                CcspTraceWarning(("pStaticClients->entries_count is %zu\n", pStaticClients->entries_count));
                 CcspTraceWarning(("pStaticClients->subdoc_name is %s\n", pStaticClients->subdoc_name));
                 CcspTraceWarning(("pStaticClients->version is %lu\n", (unsigned long)pStaticClients->version));
                 CcspTraceWarning(("pStaticClients->transaction_id is %d\n", pStaticClients->transaction_id));
@@ -3952,7 +3952,7 @@ Server_SetParamStringValue
             if (NULL != pLanInfo)
             {
                 pLanInfo->entries_count = 1;// Assigned 1 by default.
-                CcspTraceWarning(("pLanInfo->entries_count is %u\n", pLanInfo->entries_count));
+                CcspTraceWarning(("pLanInfo->entries_count is %zu\n", pLanInfo->entries_count));
                 CcspTraceWarning(("pLanInfo->subdoc_name is %s\n", pLanInfo->subdoc_name));
                 CcspTraceWarning(("pLanInfo->version is %lu\n", (unsigned long)pLanInfo->version));
                 CcspTraceWarning(("pLanInfo->transaction_id is %d\n", pLanInfo->transaction_id));
@@ -6017,7 +6017,7 @@ Pool_GetParamStringValue
             CosaDmlDhcpsGetPoolCfg(NULL,&tmpCfg);
             snprintf(pValue,sizeof(tmpCfg.DomainName),"%s", tmpCfg.DomainName);
         }else {
-            CcspTraceWarning(("%s: pPool->Cfg.DomainName: %s  0x%1x 0x%1x 0x%1x 0x%1x, sizeof: %d\n",
+            CcspTraceWarning(("%s: pPool->Cfg.DomainName: %s  0x%1x 0x%1x 0x%1x 0x%1x, sizeof: %zu\n",
                               __FUNCTION__, pPool->Cfg.DomainName, (signed) (pPool->Cfg.DomainName[0]),
                               (signed) (pPool->Cfg.DomainName[1]), (signed) (pPool->Cfg.DomainName[2]),
                               (signed) (pPool->Cfg.DomainName[3]), sizeof(pPool->Cfg.DomainName)));
@@ -7888,7 +7888,7 @@ StaticAddress_SetParamStringValue
         }
         else
         {
-            CcspTraceWarning(("'%s' value should be less than (%d) charecters\n", ParamName, ( sizeof(pDhcpStaticAddress->DeviceName) - 1 )));
+            CcspTraceWarning(("'%s' value should be less than (%zu) charecters\n", ParamName, ( sizeof(pDhcpStaticAddress->DeviceName) - 1 )));
         }
     }
 
@@ -7907,7 +7907,7 @@ StaticAddress_SetParamStringValue
         }
         else
         {
-            CcspTraceWarning(("'%s' value should be less than (%d) charecters\n", ParamName, ( sizeof(pDhcpStaticAddress->Comment) - 1 )));
+            CcspTraceWarning(("'%s' value should be less than (%zu) charecters\n", ParamName, ( sizeof(pDhcpStaticAddress->Comment) - 1 )));
         }
     }
 
